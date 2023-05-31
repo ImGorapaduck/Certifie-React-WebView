@@ -11,16 +11,16 @@ import shinhan from "./assets/AppLogo/shinhan.png";
 import toss from "./assets/AppLogo/toss.png";
 
 const PayLoadCertificate_WB13_Screen = ({ navigation }) => {
-  const [selectedBoxIndex, setSelectedBoxIndex] = useState("");
+  // const [selectedBoxIndex, setSelectedBoxIndex] = useState("");
 
-  const privacyPolicy = "https://certifie-privacy-policy.vercel.app"; //개인정보 처리방침
+  // const privacyPolicy = "https://certifie-privacy-policy.vercel.app"; //개인정보 처리방침
 
-  const authenticationSend = () => {
-    if (abled) {
-      return;
-    }
-    navigation.navigate("InputUserData", { isApp: selectedBoxIndex });
-  };
+  // const authenticationSend = () => {
+  //   if (abled) {
+  //     return;
+  //   }
+  //   navigation.navigate("InputUserData", { isApp: selectedBoxIndex });
+  // };
 
   // const openUrl = async (url) => {
   //   // URL을 열기 전에, 해당 URL이 유효한지 확인합니다.
@@ -34,16 +34,16 @@ const PayLoadCertificate_WB13_Screen = ({ navigation }) => {
   //   }
   // };
 
-  const handleBoxPress = (index) => {
-    setSelectedBoxIndex(index);
-  };
+  // const handleBoxPress = (index) => {
+  //   setSelectedBoxIndex(index);
+  // };
 
-  const abled = selectedBoxIndex === "";
+  // const abled = selectedBoxIndex === "";
 
   return (
     <ContentsCT>
       <PageTitleCT>
-        <PageTitle onPress={() => navigation.goBack()}>간편인증</PageTitle>
+        <PageTitle>간편인증</PageTitle>
       </PageTitleCT>
 
       <BodyAreaCT>
@@ -54,8 +54,8 @@ const PayLoadCertificate_WB13_Screen = ({ navigation }) => {
           <LineBoxCT>
             <BoxCT>
               <BoxBG
-                isSelected={selectedBoxIndex === 0}
-                onPress={() => handleBoxPress(0)}
+              // isSelected={selectedBoxIndex === 0}
+              // onPress={() => handleBoxPress(0)}
               >
                 <img
                   src={kakao}
@@ -69,8 +69,8 @@ const PayLoadCertificate_WB13_Screen = ({ navigation }) => {
             </BoxCT>
             <BoxCT>
               <BoxBG
-                isSelected={selectedBoxIndex === 1}
-                onPress={() => handleBoxPress(1)}
+              // isSelected={selectedBoxIndex === 1}
+              // onPress={() => handleBoxPress(1)}
               >
                 <img
                   src={naver}
@@ -84,8 +84,8 @@ const PayLoadCertificate_WB13_Screen = ({ navigation }) => {
             </BoxCT>
             <BoxCT>
               <BoxBG
-                isSelected={selectedBoxIndex === 2}
-                onPress={() => handleBoxPress(2)}
+              // isSelected={selectedBoxIndex === 2}
+              // onPress={() => handleBoxPress(2)}
               >
                 <img
                   src={pass}
@@ -101,8 +101,8 @@ const PayLoadCertificate_WB13_Screen = ({ navigation }) => {
           <LineBoxCT>
             <BoxCT>
               <BoxBG
-                isSelected={selectedBoxIndex === 3}
-                onPress={() => handleBoxPress(3)}
+              // isSelected={selectedBoxIndex === 3}
+              // onPress={() => handleBoxPress(3)}
               >
                 <img
                   src={toss}
@@ -116,8 +116,8 @@ const PayLoadCertificate_WB13_Screen = ({ navigation }) => {
             </BoxCT>
             <BoxCT>
               <BoxBG
-                isSelected={selectedBoxIndex === 4}
-                onPress={() => handleBoxPress(4)}
+              // isSelected={selectedBoxIndex === 4}
+              // onPress={() => handleBoxPress(4)}
               >
                 <img
                   src={payco}
@@ -131,8 +131,8 @@ const PayLoadCertificate_WB13_Screen = ({ navigation }) => {
             </BoxCT>
             <BoxCT>
               <BoxBG
-                isSelected={selectedBoxIndex === 5}
-                onPress={() => handleBoxPress(5)}
+              // isSelected={selectedBoxIndex === 5}
+              // onPress={() => handleBoxPress(5)}
               >
                 <img
                   src={kika}
@@ -148,8 +148,8 @@ const PayLoadCertificate_WB13_Screen = ({ navigation }) => {
           <LastLineBoxCT>
             <BoxCT>
               <BoxBG
-                isSelected={selectedBoxIndex === 6}
-                onPress={() => handleBoxPress(6)}
+              // isSelected={selectedBoxIndex === 6}
+              // onPress={() => handleBoxPress(6)}
               >
                 <img
                   src={kb}
@@ -159,12 +159,12 @@ const PayLoadCertificate_WB13_Screen = ({ navigation }) => {
                   }}
                 />
               </BoxBG>
-              <Body4 color={black}>KB 스타뱅킹</Body4>
+              <Body4>KB 스타뱅킹</Body4>
             </BoxCT>
             <BoxCT>
               <BoxBG
-                isSelected={selectedBoxIndex === 7}
-                onPress={() => handleBoxPress(7)}
+              // isSelected={selectedBoxIndex === 7}
+              // onPress={() => handleBoxPress(7)}
               >
                 <img
                   src={shinhan}
@@ -193,9 +193,9 @@ const PayLoadCertificate_WB13_Screen = ({ navigation }) => {
           <Body4>고객지원 : help@certifie.io</Body4>
           <Divider />
           <TextButton
-            onPress={() => {
-              openUrl(privacyPolicy);
-            }}
+          // onPress={() => {
+          //   openUrl(privacyPolicy);
+          // }}
           >
             개인정보처리방침
           </TextButton>
@@ -204,8 +204,8 @@ const PayLoadCertificate_WB13_Screen = ({ navigation }) => {
       <BasicButtonCT>
         <BasicButton
           text={"인증"}
-          property={selectedBoxIndex === "" ? "disabled" : null}
-          onPress={authenticationSend}
+          // property={selectedBoxIndex === "" ? "disabled" : null}
+          // onPress={authenticationSend}
         />
       </BasicButtonCT>
     </ContentsCT>
@@ -224,48 +224,48 @@ const ContentsCT = styled.div`
   flex: 1;
   justify-content: space-between;
   align-items: center;
-  background-color: ${({ theme }) => theme.Colors.Gray5};
+  background-color: #fcfcfc;
 `;
 
 const PageTitleCT = styled.div`
-  padding-top: ${({ HEIGHT }) => HEIGHT * 0.077}px;
-  padding-left: ${({ theme }) => theme.Spacing.xl}px;
-  padding-right: ${({ theme }) => theme.Spacing.xl}px;
-  height: ${({ HEIGHT }) => HEIGHT * 0.12}px;
+  padding-top: 64px;
+  padding-left: 24px;
+  padding-right: 24px;
+  height: 100px;
 `;
 
 const PageTitle = styled.div`
-  padding-top: ${({ HEIGHT }) => HEIGHT * 0.077}px;
-  padding-left: ${({ theme }) => theme.Spacing.xl}px;
-  padding-right: ${({ theme }) => theme.Spacing.xl}px;
-  height: ${({ HEIGHT }) => HEIGHT * 0.12}px;
+  padding-top: 64px;
+  padding-left: 24px;
+  padding-right: 24px;
+  height: 100px;
 `;
 
 const BodyAreaCT = styled.div`
   flex: 1;
-  padding-top: ${({ theme }) => theme.Spacing.xs * 9}px;
-  padding-left: ${({ theme }) => theme.Spacing.xl}px;
-  padding-right: ${({ theme }) => theme.Spacing.xl}px;
-  padding-bottom: ${({ theme }) => theme.Spacing.xxl}px;
+  padding-top: 36px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 32px;
   align-items: center;
 `;
 
 const BodyTextCT = styled.div`
   justify-content: flex-start;
-  width: ${({ theme }) => theme.Column.C6}px;
-  margin-bottom: ${({ theme }) => theme.Spacing.xl}px;
+  width: 327px;
+  margin-bottom: 24px;
 `;
 
 const AllBoxCT = styled.div`
   flex-direction: column;
-  width: ${({ theme }) => theme.Column.C5}px;
-  margin-bottom: ${({ theme }) => theme.Spacing.xxxl * 2}px;
+  width: 327px;
+  margin-bottom: 80px;
 `;
 
 const LineBoxCT = styled.div`
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: ${({ theme }) => theme.Spacing.l}px;
+  margin-bottom: 16px;
 `;
 
 const LastLineBoxCT = styled.div`
@@ -279,26 +279,27 @@ const BoxCT = styled.div`
   align-items: center;
 `;
 
-const BoxBG = styled.TouchableOpacity`
-  margin-bottom: ${({ theme }) => theme.Spacing.s}px;
+const BoxBG = styled.div`
+  margin-bottom: 8px;
   border-width: 5px;
-  border-color: ${({ isSelected }) => (isSelected ? "#94BAFD" : "transparent")};
+  /* border-color: ${({ isSelected }) =>
+    isSelected ? "#94BAFD" : "transparent"};
   border-radius: ${({ isSelected, theme }) =>
     isSelected
       ? css`
           ${theme.Spacing.m}px
         `
-      : "transparent"};
+      : "transparent"}; */
 `;
 
 const InfoCT = styled.div`
-  width: ${({ theme }) => theme.Column.C6}px;
+  width: 327px;
 `;
 
 const HelpCT = styled.div`
   flex-direction: row;
-  margin-top: ${({ theme }) => theme.Spacing.s}px;
-  width: ${({ theme }) => theme.Column.C6}px;
+  margin-top: 8px;
+  width: 327px;
   align-items: center;
 `;
 
@@ -307,7 +308,7 @@ const TextButton = styled.div`
 `;
 
 const BasicButtonCT = styled.div`
-  margin-bottom: ${({ theme }) => theme.Spacing.xxl * 2}px;
+  margin-bottom: 64px;
 `;
 
 const BasicButton = styled.div`
@@ -320,11 +321,11 @@ const BasicButton = styled.div`
 `;
 
 const Divider = styled.div`
-  width: ${({ theme }) => theme.Spacing.xxs * 0.5}px;
-  height: ${({ theme }) => theme.Spacing.m}px;
-  background-color: ${({ theme }) => theme.Colors.Gray1};
-  margin-left: ${({ theme }) => theme.Spacing.xs}px;
-  margin-right: ${({ theme }) => theme.Spacing.xs}px;
+  width: 1px;
+  height: 12px;
+  background-color: #fcfcfc;
+  margin-left: 4px;
+  margin-right: 4px;
 `;
 
 export default PayLoadCertificate_WB13_Screen;
