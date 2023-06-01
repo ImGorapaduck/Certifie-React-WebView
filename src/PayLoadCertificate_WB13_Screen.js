@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 import kakao from "./assets/AppLogo/kakao.png";
 import kb from "./assets/AppLogo/kb.png";
 import kika from "./assets/AppLogo/kika.png";
@@ -9,40 +9,29 @@ import pass from "./assets/AppLogo/pass.png";
 import payco from "./assets/AppLogo/payco.png";
 import shinhan from "./assets/AppLogo/shinhan.png";
 import toss from "./assets/AppLogo/toss.png";
+import { IoIosArrowBack } from "react-icons/io";
+import { Link } from 'react-router-dom';
 
 const PayLoadCertificate_WB13_Screen = ({ navigation }) => {
-  // const [selectedBoxIndex, setSelectedBoxIndex] = useState("");
+  const [selectedBoxIndex, setSelectedBoxIndex] = useState("");
 
   // const privacyPolicy = "https://certifie-privacy-policy.vercel.app"; //개인정보 처리방침
-
-  // const authenticationSend = () => {
-  //   if (abled) {
-  //     return;
-  //   }
-  //   navigation.navigate("InputUserData", { isApp: selectedBoxIndex });
-  // };
-
-  // const openUrl = async (url) => {
-  //   // URL을 열기 전에, 해당 URL이 유효한지 확인합니다.
-  //   console.log(url);
-  //   const supported = await Linking.canOpenURL(url);
-  //   if (supported) {
-  //     // URL을 열어줍니다.
-  //     await Linking.openURL(url);
-  //   } else {
-  //     console.log(`지원하지 않는 URL입니다: ${url}`);
-  //   }
-  // };
-
-  // const handleBoxPress = (index) => {
-  //   setSelectedBoxIndex(index);
-  // };
-
-  // const abled = selectedBoxIndex === "";
+  const handleBoxPress = (index) => {
+    // 처리 로직
+    setSelectedBoxIndex(index)
+  };
 
   return (
     <ContentsCT>
       <PageTitleCT>
+        <div onClick={() => {
+          window.ReactNativeWebView.postMessage(JSON.stringify({
+            data: "go Back"
+          }))
+        }}>
+          <IoIosArrowBack size={25} />
+        </div>
+ 
         <PageTitle>간편인증</PageTitle>
       </PageTitleCT>
 
@@ -53,128 +42,157 @@ const PayLoadCertificate_WB13_Screen = ({ navigation }) => {
         <AllBoxCT>
           <LineBoxCT>
             <BoxCT>
-              <BoxBG
-              // isSelected={selectedBoxIndex === 0}
-              // onPress={() => handleBoxPress(0)}
-              >
-                <img
-                  src={kakao}
-                  style={{
-                    width: 64,
-                    height: 64,
-                  }}
-                />
+
+              <BoxBG>
+                <ImageDiv
+                  isSelected={selectedBoxIndex === 1}
+                  onClick={() => handleBoxPress(1)}
+                >
+                  <img
+                    alt="vector"
+                    src={kakao}
+                    style={{
+                      width: 64,
+                      height: 64,
+                    }}
+                  />
+                </ImageDiv>
+                <Body4>카카오 인증서</Body4>
+
               </BoxBG>
-              <Body4>카카오 인증서</Body4>
             </BoxCT>
             <BoxCT>
               <BoxBG
-              // isSelected={selectedBoxIndex === 1}
-              // onPress={() => handleBoxPress(1)}
               >
-                <img
-                  src={naver}
-                  style={{
-                    width: 64,
-                    height: 64,
-                  }}
-                />
+                <ImageDiv
+                  isSelected={selectedBoxIndex === 2}
+                  onClick={() => handleBoxPress(2)}
+                >
+                  <img
+                    alt="vector"
+                    src={naver}
+                    style={{
+                      width: 64,
+                      height: 64,
+                    }}
+                  />
+                </ImageDiv>
+                <Body4>네이버 인증서</Body4>
               </BoxBG>
-              <Body4>네이버 인증서</Body4>
             </BoxCT>
             <BoxCT>
               <BoxBG
-              // isSelected={selectedBoxIndex === 2}
-              // onPress={() => handleBoxPress(2)}
               >
-                <img
-                  src={pass}
-                  style={{
-                    width: 64,
-                    height: 64,
-                  }}
-                />
+                <ImageDiv
+                  isSelected={selectedBoxIndex === 3}
+                  onClick={() => handleBoxPress(3)}
+                >
+                  <img
+                    alt="vector"
+                    src={pass}
+                    style={{
+                      width: 64,
+                      height: 64,
+                    }}
+                  />
+                </ImageDiv>
+                <Body4>PASS 인증서</Body4>
               </BoxBG>
-              <Body4>PASS 인증서</Body4>
             </BoxCT>
           </LineBoxCT>
           <LineBoxCT>
             <BoxCT>
-              <BoxBG
-              // isSelected={selectedBoxIndex === 3}
-              // onPress={() => handleBoxPress(3)}
-              >
-                <img
-                  src={toss}
-                  style={{
-                    width: 64,
-                    height: 64,
-                  }}
-                />
+              <BoxBG>
+                <ImageDiv
+                  isSelected={selectedBoxIndex === 4}
+                  onClick={() => handleBoxPress(4)}>
+                  <img
+                    src={toss}
+                    alt="vector"
+
+                    style={{
+                      width: 64,
+                      height: 64,
+                    }}
+                  />
+                </ImageDiv>
+                <Body4>TOSS 인증서</Body4>
               </BoxBG>
-              <Body4>TOSS 인증서</Body4>
             </BoxCT>
             <BoxCT>
-              <BoxBG
-              // isSelected={selectedBoxIndex === 4}
-              // onPress={() => handleBoxPress(4)}
-              >
-                <img
-                  src={payco}
-                  style={{
-                    width: 64,
-                    height: 64,
-                  }}
-                />
+              <BoxBG>
+                <ImageDiv
+                  isSelected={selectedBoxIndex === 5}
+                  onClick={() => handleBoxPress(5)}
+                >
+                  <img
+                    alt="vector"
+                    src={payco}
+                    style={{
+                      width: 64,
+                      height: 64,
+                    }}
+                  />
+                </ImageDiv>
+                <Body4>PAYCO 인증서</Body4>
               </BoxBG>
-              <Body4>PAYCO 인증서</Body4>
             </BoxCT>
             <BoxCT>
-              <BoxBG
-              // isSelected={selectedBoxIndex === 5}
-              // onPress={() => handleBoxPress(5)}
-              >
-                <img
-                  src={kika}
-                  style={{
-                    width: 64,
-                    height: 64,
-                  }}
-                />
+              <BoxBG>
+
+                <ImageDiv
+                  isSelected={selectedBoxIndex === 6}
+                  onClick={() => handleBoxPress(6)}
+                >
+                  <img
+                    alt="vector"
+                    src={kika}
+                    style={{
+                      width: 64,
+                      height: 64,
+                    }}
+                  />
+                </ImageDiv> <div></div>
+                <Body4>삼성 패스</Body4>
               </BoxBG>
-              <Body4>삼성 패스</Body4>
             </BoxCT>
           </LineBoxCT>
           <LastLineBoxCT>
             <BoxCT>
-              <BoxBG
-              // isSelected={selectedBoxIndex === 6}
-              // onPress={() => handleBoxPress(6)}
-              >
-                <img
-                  src={kb}
-                  style={{
-                    width: 64,
-                    height: 64,
-                  }}
-                />
+              <BoxBG>
+                <ImageDiv
+                  isSelected={selectedBoxIndex === 7}
+                  onClick={() => handleBoxPress(7)}>
+                  <img
+                    alt="vector"
+                    src={kb}
+                    style={{
+                      width: 64,
+                      height: 64,
+                    }}
+                  />
+                </ImageDiv>
+                <Body4>KB 스타뱅킹</Body4>
               </BoxBG>
-              <Body4>KB 스타뱅킹</Body4>
+
             </BoxCT>
             <BoxCT>
-              <BoxBG
-              // isSelected={selectedBoxIndex === 7}
-              // onPress={() => handleBoxPress(7)}
-              >
-                <img
-                  src={shinhan}
-                  style={{
-                    width: 64,
-                    height: 64,
-                  }}
-                />
+              <BoxBG>
+                <ImageDiv
+                  isSelected={selectedBoxIndex === 8}
+                  onClick={() => handleBoxPress(8)}
+                >
+                  <img
+                    alt="vector"
+                    src={shinhan}
+                    style={{
+                      width: 64,
+                      height: 64,
+                    }}
+                  />
+                </ImageDiv>
+                <Body4>신한 인증서</Body4>
               </BoxBG>
-              <Body4>신한 인증서</Body4>
             </BoxCT>
             <BoxCT>
               <BoxBG></BoxBG>
@@ -184,70 +202,86 @@ const PayLoadCertificate_WB13_Screen = ({ navigation }) => {
         </AllBoxCT>
 
         <InfoCT>
-          <Body4>※ 본인 명의의 인증서로 본인 인증이 가능합니다.</Body4>
-          <Body4>※ 간편인증은 해당 인증서의 앱 설치 후 진행 가능합니다.</Body4>
-          <Body4>※ 금융인증서는 각 은행에서 발급이 가능합니다.</Body4>
-          <Body4>※ 입력한 고객 정보는 간편인증을 위해서만 활용합니다.</Body4>
+          <div>
+            <Body4>※ 본인 명의의 인증서로 본인 인증이 가능합니다.</Body4>
+            <Body4>※ 간편인증은 해당 인증서의 앱 설치 후 진행 가능합니다.</Body4>
+            <Body4>※ 금융인증서는 각 은행에서 발급이 가능합니다.</Body4>
+            <Body4>※ 입력한 고객 정보는 간편인증을 위해서만 활용합니다.</Body4>
+          </div>
         </InfoCT>
+
+      </BodyAreaCT>
+      <BasicButtonCT>
         <HelpCT>
           <Body4>고객지원 : help@certifie.io</Body4>
           <Divider />
-          <TextButton
-          // onPress={() => {
-          //   openUrl(privacyPolicy);
-          // }}
-          >
+
+          <TextButton>
             개인정보처리방침
           </TextButton>
         </HelpCT>
-      </BodyAreaCT>
-      <BasicButtonCT>
-        <BasicButton
-          text={"인증"}
+        <Link
+          to={`./info?number=${selectedBoxIndex}`}
+        >
+          <BasicButton
+
           // property={selectedBoxIndex === "" ? "disabled" : null}
-          // onPress={authenticationSend}
-        />
+          // onClick={authenticationSend}
+          >확인</BasicButton>
+        </Link>
+
       </BasicButtonCT>
     </ContentsCT>
   );
 };
 
 const Body3 = styled.div`
-  font-size: 14pt;
+  font-size: 14px;
 `;
 
 const Body4 = styled.div`
-  font-size: 12pt;
+
+
+  font-size: 12px;
 `;
 
 const ContentsCT = styled.div`
-  flex: 1;
-  justify-content: space-between;
-  align-items: center;
+
+  /* flex: 1; */
+  /* justify-content: space-between; */
+  /* align-items: center; */
   background-color: #fcfcfc;
+  padding-top: 25px;
 `;
 
 const PageTitleCT = styled.div`
-  padding-top: 64px;
+display: flex;
+flex-direction: row;
+align-items: center;
+  padding-top: 54px;
   padding-left: 24px;
-  padding-right: 24px;
-  height: 100px;
+  margin-bottom: 30px;
+  /* padding-right: 24px; */
+  /* height: 100px; */
 `;
 
 const PageTitle = styled.div`
-  padding-top: 64px;
+  /* padding-top: 64px;
   padding-left: 24px;
   padding-right: 24px;
-  height: 100px;
+  height: 100px; */
 `;
 
 const BodyAreaCT = styled.div`
-  flex: 1;
+/* display: flex; */
+  /* flex: 1; */
   padding-top: 36px;
   padding-left: 24px;
   padding-right: 24px;
   padding-bottom: 32px;
-  align-items: center;
+
+  /* align-items: center; */
+
 `;
 
 const BodyTextCT = styled.div`
@@ -263,14 +297,18 @@ const AllBoxCT = styled.div`
 `;
 
 const LineBoxCT = styled.div`
+display: flex;
   flex-direction: row;
-  justify-content: space-between;
+
+  justify-content: space-around;
   margin-bottom: 16px;
 `;
 
 const LastLineBoxCT = styled.div`
+display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
+
 `;
 
 const BoxCT = styled.div`
@@ -281,43 +319,62 @@ const BoxCT = styled.div`
 
 const BoxBG = styled.div`
   margin-bottom: 8px;
-  border-width: 5px;
-  /* border-color: ${({ isSelected }) =>
-    isSelected ? "#94BAFD" : "transparent"};
-  border-radius: ${({ isSelected, theme }) =>
-    isSelected
-      ? css`
-          ${theme.Spacing.m}px
-        `
-      : "transparent"}; */
+
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
 `;
 
+
+
 const InfoCT = styled.div`
-  width: 327px;
+
+display: flex;
+/* flex-direction: row; */
+align-items: center;
+justify-content: center;
+  /* width: 327px; */
+  color:rgba(170, 170, 170, 1);
+
 `;
 
 const HelpCT = styled.div`
+display: flex;
   flex-direction: row;
   margin-top: 8px;
   width: 327px;
-  align-items: center;
+
+  /* align-items: center; */
+  justify-content: center;
+  color:rgba(170, 170, 170, 1);
+  margin-bottom: 8px;
 `;
 
 const TextButton = styled.div`
-  font-size: 12pt;
+  font-size: 12px;
 `;
 
 const BasicButtonCT = styled.div`
+
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
   margin-bottom: 64px;
+
 `;
 
-const BasicButton = styled.div`
+const BasicButton = styled.button`
   width: 320px;
   height: 64px;
-  background-color: aqua;
-  font-size: 20pt;
-  color: black;
+  background-color: #3769FC;
+  font-size: 20px;
+  font-weight: 600;
+  color: #FFFFFF;
   border-radius: 8px;
+  border: 1px solid #3769FC;
+
 `;
 
 const Divider = styled.div`
@@ -327,5 +384,18 @@ const Divider = styled.div`
   margin-left: 4px;
   margin-right: 4px;
 `;
+
+const ImageDiv = styled.div`
+
+border: 5px solid ;
+  border-color: ${({ isSelected }) =>
+    isSelected ? "#94BAFD" : "transparent"};
+  border-radius: ${({ isSelected }) =>
+    isSelected
+      ? css`
+          10px
+        `
+      : "transparent"};
+`
 
 export default PayLoadCertificate_WB13_Screen;
