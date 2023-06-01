@@ -12,9 +12,6 @@ import toss from "./assets/AppLogo/toss.png";
 import { IoIosArrowBack } from "react-icons/io";
 import { Link } from 'react-router-dom';
 
-
-
-
 const PayLoadCertificate_WB13_Screen = ({ navigation }) => {
   const [selectedBoxIndex, setSelectedBoxIndex] = useState("");
 
@@ -34,6 +31,7 @@ const PayLoadCertificate_WB13_Screen = ({ navigation }) => {
         }}>
           <IoIosArrowBack size={25} />
         </div>
+ 
         <PageTitle>간편인증</PageTitle>
       </PageTitleCT>
 
@@ -44,6 +42,7 @@ const PayLoadCertificate_WB13_Screen = ({ navigation }) => {
         <AllBoxCT>
           <LineBoxCT>
             <BoxCT>
+
               <BoxBG>
                 <ImageDiv
                   isSelected={selectedBoxIndex === 1}
@@ -59,11 +58,11 @@ const PayLoadCertificate_WB13_Screen = ({ navigation }) => {
                   />
                 </ImageDiv>
                 <Body4>카카오 인증서</Body4>
+
               </BoxBG>
             </BoxCT>
             <BoxCT>
               <BoxBG
-
               >
                 <ImageDiv
                   isSelected={selectedBoxIndex === 2}
@@ -83,7 +82,6 @@ const PayLoadCertificate_WB13_Screen = ({ navigation }) => {
             </BoxCT>
             <BoxCT>
               <BoxBG
-
               >
                 <ImageDiv
                   isSelected={selectedBoxIndex === 3}
@@ -104,13 +102,10 @@ const PayLoadCertificate_WB13_Screen = ({ navigation }) => {
           </LineBoxCT>
           <LineBoxCT>
             <BoxCT>
-              <BoxBG
-
-              >
+              <BoxBG>
                 <ImageDiv
                   isSelected={selectedBoxIndex === 4}
-                  onClick={() => handleBoxPress(4)}
-                >
+                  onClick={() => handleBoxPress(4)}>
                   <img
                     src={toss}
                     alt="vector"
@@ -125,9 +120,7 @@ const PayLoadCertificate_WB13_Screen = ({ navigation }) => {
               </BoxBG>
             </BoxCT>
             <BoxCT>
-              <BoxBG
-
-              >
+              <BoxBG>
                 <ImageDiv
                   isSelected={selectedBoxIndex === 5}
                   onClick={() => handleBoxPress(5)}
@@ -145,9 +138,7 @@ const PayLoadCertificate_WB13_Screen = ({ navigation }) => {
               </BoxBG>
             </BoxCT>
             <BoxCT>
-              <BoxBG
-
-              >
+              <BoxBG>
 
                 <ImageDiv
                   isSelected={selectedBoxIndex === 6}
@@ -168,9 +159,7 @@ const PayLoadCertificate_WB13_Screen = ({ navigation }) => {
           </LineBoxCT>
           <LastLineBoxCT>
             <BoxCT>
-              <BoxBG
-
-              >
+              <BoxBG>
                 <ImageDiv
                   isSelected={selectedBoxIndex === 7}
                   onClick={() => handleBoxPress(7)}>
@@ -185,11 +174,10 @@ const PayLoadCertificate_WB13_Screen = ({ navigation }) => {
                 </ImageDiv>
                 <Body4>KB 스타뱅킹</Body4>
               </BoxBG>
+
             </BoxCT>
             <BoxCT>
-              <BoxBG
-
-              >
+              <BoxBG>
                 <ImageDiv
                   isSelected={selectedBoxIndex === 8}
                   onClick={() => handleBoxPress(8)}
@@ -227,6 +215,7 @@ const PayLoadCertificate_WB13_Screen = ({ navigation }) => {
         <HelpCT>
           <Body4>고객지원 : help@certifie.io</Body4>
           <Divider />
+
           <TextButton>
             개인정보처리방침
           </TextButton>
@@ -240,6 +229,7 @@ const PayLoadCertificate_WB13_Screen = ({ navigation }) => {
           // onClick={authenticationSend}
           >확인</BasicButton>
         </Link>
+
       </BasicButtonCT>
     </ContentsCT>
   );
@@ -256,6 +246,7 @@ const Body4 = styled.div`
 `;
 
 const ContentsCT = styled.div`
+
   /* flex: 1; */
   /* justify-content: space-between; */
   /* align-items: center; */
@@ -284,12 +275,13 @@ const PageTitle = styled.div`
 const BodyAreaCT = styled.div`
 /* display: flex; */
   /* flex: 1; */
-
   padding-top: 36px;
   padding-left: 24px;
   padding-right: 24px;
   padding-bottom: 32px;
+
   /* align-items: center; */
+
 `;
 
 const BodyTextCT = styled.div`
@@ -307,6 +299,7 @@ const AllBoxCT = styled.div`
 const LineBoxCT = styled.div`
 display: flex;
   flex-direction: row;
+
   justify-content: space-around;
   margin-bottom: 16px;
 `;
@@ -326,6 +319,7 @@ const BoxCT = styled.div`
 
 const BoxBG = styled.div`
   margin-bottom: 8px;
+
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -335,13 +329,14 @@ const BoxBG = styled.div`
 
 
 const InfoCT = styled.div`
+
 display: flex;
 /* flex-direction: row; */
 align-items: center;
 justify-content: center;
   /* width: 327px; */
   color:rgba(170, 170, 170, 1);
-  
+
 `;
 
 const HelpCT = styled.div`
@@ -349,6 +344,7 @@ display: flex;
   flex-direction: row;
   margin-top: 8px;
   width: 327px;
+
   /* align-items: center; */
   justify-content: center;
   color:rgba(170, 170, 170, 1);
@@ -360,12 +356,13 @@ const TextButton = styled.div`
 `;
 
 const BasicButtonCT = styled.div`
+
 display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
   margin-bottom: 64px;
-  
+
 `;
 
 const BasicButton = styled.button`
